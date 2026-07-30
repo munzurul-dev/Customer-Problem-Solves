@@ -7,6 +7,7 @@ import NewTask from "./Components/NewTask/newTask";
 import AllSolvedCard from "./Components/AllSolvedCard/AllSolvedCard";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [allTickets, setAllTickets] = useState([]);
@@ -78,6 +79,7 @@ function App() {
           </Suspense>
         </div>
       </div>
+      <Footer></Footer>
         <ToastContainer />
     </>
   );
