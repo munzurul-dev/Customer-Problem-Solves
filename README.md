@@ -1,16 +1,34 @@
-# React + Vite
+# Customer Support Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive customer support dashboard built with React and Tailwind CSS. This project helps manage customer support tickets through an intuitive and clean user interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- View all support tickets
+- Add tickets to the working list
+- Mark tickets as completed
+- Remove completed tickets
+- Responsive design for all devices
+- Loading state with Suspense
+- Toast notifications
+- Modern dashboard UI
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Tailwind CSS
+- DaisyUI
+- React Toastify
+- JavaScript (ES6+)
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+https://support-dashboard-web.netlify.app/
+
+## Installation
+
+```bash
+git clone https://github.com/munzurul-dev/Customer-Problem-Solves
+cd project-folder
+npm install
+npm run dev
