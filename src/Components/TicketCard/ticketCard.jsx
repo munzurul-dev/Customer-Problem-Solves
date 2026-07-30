@@ -1,6 +1,10 @@
-const TicketCard = ({ ticket , setTicketCard , ticketCard }) => {
-  
-
+import { toast } from "react-toastify";
+const TicketCard = ({
+  ticket,
+  setTicketCard,
+  allTickets,
+  setAllTickets,
+}) => {
   const isStatusOpen = ticket.status === "Open";
 
   const getPriorityColor = (priority) => {
@@ -15,12 +19,21 @@ const TicketCard = ({ ticket , setTicketCard , ticketCard }) => {
         return "text-gray-500";
     }
   };
-   const handleClick = () =>{
-         setTicketCard( (ticketCard) => [...ticketCard , ticket])
-   }
-   console.log(ticketCard)
+  const handleClick = () => {
+    setTicketCard((ticketCard) => [...ticketCard, ticket]);
+    const remainingTickets = allTickets.filter(
+      (nTicket) => nTicket.id !== ticket.id,
+    );
+
+    setAllTickets(remainingTickets);
+    toast.success("Task added successfully!");
+  };
+  
   return (
-    <div onClick={()=> handleClick(ticket) } className="w-full cursor-pointer bg-white rounded-lg border border-gray-100 shadow-sm p-4 flex flex-col justify-between hover:shadow-md transition-shadow duration-200">
+    <div
+      onClick={() => handleClick(ticket)}
+      className="w-full cursor-pointer bg-white rounded-lg border border-gray-100 shadow-sm p-4 flex flex-col justify-between hover:shadow-md transition-shadow duration-200"
+    >
       <div className="flex items-center justify-between gap-2 mb-2">
         <h3 className="font-semibold text-gray-900 text-base line-clamp-1">
           {ticket.title}
@@ -49,7 +62,9 @@ const TicketCard = ({ ticket , setTicketCard , ticketCard }) => {
       <div className="flex items-center justify-between text-xs text-gray-500 pt-2 border-t border-gray-50">
         <div className="flex items-center gap-2">
           <span className="text-gray-400 font-normal">#{ticket.id}</span>
-          <span className={`font-semibold ${getPriorityColor(ticket.priority)}`}>
+          <span
+            className={`font-semibold ${getPriorityColor(ticket.priority)}`}
+          >
             {ticket.priority}
           </span>
         </div>
