@@ -66,7 +66,7 @@ function App() {
                 ></NewTask>
               </div>
               <div>
-                <h2 className="mt-5 font-bold ">Resolved task history</h2>
+                <h2 className="mt-5 font-bold">Resolved task history</h2>
                 <AllSolvedCard
                   removeSolvedCard={removeSolvedCard}
                   solvedCard={solvedCard}
